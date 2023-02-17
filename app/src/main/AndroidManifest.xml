@@ -9,13 +9,14 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/Netflix"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppStreamingInterfaces"
+        android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
             android:name=".Reproductor"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"
-            android:label="@string/title_activity_reproductor"/>
+            android:label="@string/title_activity_reproductor"
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
