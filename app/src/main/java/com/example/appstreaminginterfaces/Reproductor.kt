@@ -1,5 +1,6 @@
 package com.example.appstreaminginterfaces
 
+import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -17,5 +18,9 @@ class Reproductor : AppCompatActivity() {
         binding.videoView.setVideoURI(Uri.parse(filePlace))
         binding.videoView.setMediaController(MediaController(this))
         binding.videoView.start()
+        binding.buttonVolverReproductor.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

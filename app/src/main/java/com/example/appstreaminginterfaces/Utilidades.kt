@@ -4,7 +4,7 @@ import kotlin.random.Random
 
 lateinit var ultimaPeliSeleccionada: Movie
 
-fun generarPeliAleatoria(): Int {
+fun generarPeliAleatoria() {
     var aux = Random.nextInt(Movie.data.size)
-    return aux
+    ultimaPeliSeleccionada = Movie.data[aux]
 }

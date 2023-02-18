@@ -8,7 +8,7 @@ import com.example.appstreaminginterfaces.databinding.MovieFillerBinding
 
 class CustomAdapter(
     private val movieList: ArrayList<Movie>,
-    private val listener: (Movie, Int) -> Unit
+    private val listener: (Movie, Int, Boolean) -> Unit
 ) :
     RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
@@ -19,7 +19,11 @@ class CustomAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindMovie(movieList[position])
-        holder.itemView.setOnClickListener { listener(movieList[position], position) }
+        holder.itemView.setOnClickListener { listener(movieList[position], position, false) }
+        holder.itemView.setOnLongClickListener {
+            listener(movieList[position], position, true)
+            true
+        }
     }
 
     override fun getItemCount(): Int {
