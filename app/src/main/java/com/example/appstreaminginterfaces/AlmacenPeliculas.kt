@@ -8,7 +8,7 @@ val seriesAccion
             "Descubre cómo aumentar tu productividad al estudiaraaobhbgfaghibfogbasobgfnoiabghobarghobnshegrbhsbgengubguyoerhbnvugbcvftgbhnjmnhbgfcdrxsezdrfctvgbhnjmjnhbgyftrdeswdrftvygbnhujmnhugyftrdeswdrftvygbnhjmko,mjinhuybgftdrcesrftgyhunjimkoijuhygtfrdes",
             R.drawable.ic_launcher_background,
             R.drawable.ic_launcher_foreground,
-            R.raw.trailer
+            "HhesaQXLuRY&ab_channel=TrailerBlend"
         ),
         Movie(
             2,
@@ -16,7 +16,7 @@ val seriesAccion
             "Incursiona en el mundo de la narración infantil",
             R.drawable.ic_launcher_foreground,
             R.drawable.ic_launcher_foreground,
-            R.raw.trailer
+            "HhesaQXLuRY&ab_channel=TrailerBlend"
         ),
         Movie(
             3,
@@ -24,7 +24,7 @@ val seriesAccion
             "Aplica estas estrategias para mejorar tus trabajos en grupo",
             R.drawable.ic_launcher_foreground,
             R.drawable.ic_launcher_foreground,
-            R.raw.trailer
+            "HhesaQXLuRY&ab_channel=TrailerBlend"
         ),
         Movie(
             4,
@@ -32,7 +32,7 @@ val seriesAccion
             "Te presentamos la lista de los libros más raros",
             R.drawable.ic_launcher_foreground,
             R.drawable.ic_launcher_foreground,
-            R.raw.trailer
+            "HhesaQXLuRY&ab_channel=TrailerBlend"
         ),
         Movie(
             5,
@@ -40,7 +40,7 @@ val seriesAccion
             "En este artículo una actitud adecuada para la U",
             R.drawable.ic_launcher_foreground,
             R.drawable.ic_launcher_foreground,
-            R.raw.trailer
+            "HhesaQXLuRY&ab_channel=TrailerBlend"
         ),
         Movie(
             6,
@@ -48,7 +48,7 @@ val seriesAccion
             "Descubre los buscadores más importantes para cada área del conocimiento",
             R.drawable.ic_launcher_foreground,
             R.drawable.ic_launcher_foreground,
-            R.raw.trailer
+            "HhesaQXLuRY&ab_channel=TrailerBlend"
         ),
         Movie(
             7,
@@ -56,7 +56,7 @@ val seriesAccion
             "Karla te explica un marco de trabajo para hace ensayos",
             R.drawable.ic_launcher_foreground,
             R.drawable.ic_launcher_foreground,
-            R.raw.trailer
+            "HhesaQXLuRY&ab_channel=TrailerBlend"
         ),
         Movie(
             8,
@@ -64,7 +64,7 @@ val seriesAccion
             "Aprende a modificar tu entorno para sacar el máximo beneficio de tu mente",
             R.drawable.ic_launcher_foreground,
             R.drawable.ic_launcher_foreground,
-            R.raw.trailer
+            "HhesaQXLuRY&ab_channel=TrailerBlend"
         ),
         Movie(
             9,
@@ -72,7 +72,7 @@ val seriesAccion
             "Como Carlos logró estudiar 80 horas sin agotarse",
             R.drawable.ic_launcher_foreground,
             R.drawable.ic_launcher_foreground,
-            R.raw.trailer
+            "HhesaQXLuRY&ab_channel=TrailerBlend"
         ),
         Movie(
             10,
@@ -80,6 +80,6 @@ val seriesAccion
             "Consejos para terminar trabajos de grado rápido",
             R.drawable.ic_launcher_foreground,
             R.drawable.ic_launcher_foreground,
-            R.raw.trailer
+            "HhesaQXLuRY&ab_channel=TrailerBlend"
         )
     )

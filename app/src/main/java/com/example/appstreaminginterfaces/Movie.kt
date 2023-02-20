@@ -6,7 +6,7 @@ data class Movie (
     val description: String,
     val featuredImage: Int,
     val featuredImageTumbada: Int,
-    val trailer: Int
+    val trailer: String
 ) {
     companion object {
         val data
@@ -17,7 +17,7 @@ data class Movie (
                     "Walter White, profesor de química en un instituto, descubre que tiene cáncer de pulmón y decide trabajar junto con un ex-alumno elaborando metanfetamina de alta calidad para poder ganar dinero para que su familia se mantenga.",
                     R.drawable.bbad_vertical__1_,
                     R.drawable.bbad_landscape__2_,
-                    R.raw.trailer
+                    "HhesaQXLuRY"
                 ),
                 Movie(
                     2,
@@ -25,7 +25,7 @@ data class Movie (
                     "Incursiona en el mundo de la narración infantil",
                     R.drawable.ic_launcher_foreground,
                     R.drawable.ic_launcher_foreground,
-                    R.raw.trailer
+                    "HhesaQXLuRY"
                 ),
                 Movie(
                     3,
@@ -33,7 +33,7 @@ data class Movie (
                     "Aplica estas estrategias para mejorar tus trabajos en grupo",
                     R.drawable.ic_launcher_foreground,
                     R.drawable.ic_launcher_foreground,
-                    R.raw.trailer
+                    "HhesaQXLuRY"
                 ),
                 Movie(
                     4,
@@ -41,7 +41,7 @@ data class Movie (
                     "Te presentamos la lista de los libros más raros",
                     R.drawable.ic_launcher_foreground,
                     R.drawable.ic_launcher_foreground,
-                    R.raw.trailer
+                    "HhesaQXLuRY"
                 ),
                 Movie(
                     5,
@@ -49,7 +49,7 @@ data class Movie (
                     "En este artículo una actitud adecuada para la U",
                     R.drawable.ic_launcher_foreground,
                     R.drawable.ic_launcher_foreground,
-                    R.raw.trailer
+                    "HhesaQXLuRY"
                 ),
                 Movie(
                     6,
@@ -57,7 +57,7 @@ data class Movie (
                     "Descubre los buscadores más importantes para cada área del conocimiento",
                     R.drawable.ic_launcher_foreground,
                     R.drawable.ic_launcher_foreground,
-                    R.raw.trailer
+                    "HhesaQXLuRY"
                 ),
                 Movie(
                     7,
@@ -65,7 +65,7 @@ data class Movie (
                     "Karla te explica un marco de trabajo para hace ensayos",
                     R.drawable.ic_launcher_foreground,
                     R.drawable.ic_launcher_foreground,
-                    R.raw.trailer
+                    "HhesaQXLuRY"
                 ),
                 Movie(
                     8,
@@ -73,7 +73,7 @@ data class Movie (
                     "Aprende a modificar tu entorno para sacar el máximo beneficio de tu mente",
                     R.drawable.ic_launcher_foreground,
                     R.drawable.ic_launcher_foreground,
-                    R.raw.trailer
+                    "HhesaQXLuRY"
                 ),
                 Movie(
                     9,
@@ -81,7 +81,7 @@ data class Movie (
                     "Como Carlos logró estudiar 80 horas sin agotarse",
                     R.drawable.ic_launcher_foreground,
                     R.drawable.ic_launcher_foreground,
-                    R.raw.trailer
+                    "HhesaQXLuRY"
                 ),
                 Movie(
                     10,
@@ -89,7 +89,7 @@ data class Movie (
                     "Consejos para terminar trabajos de grado rápido",
                     R.drawable.ic_launcher_foreground,
                     R.drawable.ic_launcher_foreground,
-                    R.raw.trailer
+                    "HhesaQXLuRY"
                 )
             )
     }

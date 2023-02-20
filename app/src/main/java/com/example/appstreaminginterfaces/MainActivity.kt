@@ -1,19 +1,25 @@
 package com.example.appstreaminginterfaces
 
-import android.content.Context
 import android.content.Intent
-import android.graphics.drawable.Drawable
-import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
-import android.view.Window
-import android.widget.*
+import android.widget.LinearLayout
+import android.widget.PopupWindow
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appstreaminginterfaces.databinding.ActivityMainBinding
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.YouTubePlayerListener
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.options.IFramePlayerOptions
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.ui.DefaultPlayerUiController
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -23,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         setupRecyclerView()
         generarPeliAleatoria()
-        binding.imageButton2.setImageResource(ultimaPeliSeleccionada.featuredImage)
+        binding.imageButton2.setImageResource(ultimaPeliSeleccionada.featuredImageTumbada)
 
         binding.materialToolbar2.title = "NETFLIX"
         binding.materialToolbar2.isTitleCentered = true
@@ -48,6 +54,7 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("trailer", ultimaPeliSeleccionada.trailer)
             startActivity(intent)
         }
+
     }
 
     private fun setupRecyclerView() {
@@ -86,18 +93,25 @@ class MainActivity : AppCompatActivity() {
         val focus = true
         val popupWindow = PopupWindow(popupView, wid, high, focus)
 
-        popupView.findViewById<VideoView>(R.id.imageButtonPopUp).setOnClickListener {
+        popupView.findViewById<TextView>(R.id.textViewDescripcionPeliculaPopUp).setOnClickListener {
             val intent = Intent(this, Reproductor::class.java)
             intent.putExtra("trailer", movie.trailer)
             startActivity(intent)
         }
-        //popupView.findViewById<ImageButton>(R.id.imageButtonPopUp)
-         //   .setImageResource(movie.featuredImageTumbada)
-        val videoView = popupView.findViewById<VideoView>(R.id.imageButtonPopUp)
-        val filePlace = "android.resource://" + packageName + "/raw/" + movie.trailer
-        videoView.setVideoURI(Uri.parse(filePlace))
-        videoView.setMediaController(MediaController(this))
-        videoView.start()
+
+        var youtubePlayerView = popupView.findViewById<YouTubePlayerView>(R.id.youtube_player_view)
+        lifecycle.addObserver(youtubePlayerView)
+        val listener: YouTubePlayerListener = object : AbstractYouTubePlayerListener() {
+            override fun onReady(youTubePlayer: YouTubePlayer) {
+                // using pre-made custom ui
+                val defaultPlayerUiController =
+                    DefaultPlayerUiController(youtubePlayerView, youTubePlayer)
+                youtubePlayerView.setCustomPlayerUi(defaultPlayerUiController.rootView)
+                youTubePlayer.loadVideo(movie.trailer, 0f)
+            }
+        }
+        val options: IFramePlayerOptions = IFramePlayerOptions.Builder().controls(0).build()
+        youtubePlayerView.initialize(listener, options)
         popupView.findViewById<TextView>(R.id.textViewTituloPeliculaPopUp).text = movie.title
         popupView.findViewById<TextView>(R.id.textViewDescripcionPeliculaPopUp).text =
             movie.description
