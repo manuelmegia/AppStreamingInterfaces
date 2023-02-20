@@ -11,11 +11,11 @@
         android:background="#673333"
         android:orientation="vertical">
 
-        <ImageButton
+        <VideoView
             android:id="@+id/imageButtonPopUp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:layout_height="240dp"
+            android:layout_weight="5"
             app:srcCompat="@drawable/ic_launcher_foreground" />
 
         <TextView
@@ -24,7 +24,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#392F2F"
-            android:text="gfhuybfuibehuyvhberbgreuyghbebgvuehghgjuihghsebghsbghbnuehvbisbnhbvjurbhnvpbvhnr" />
+            android:text="gfhuybfuibehuyvhberbgreuyghbebgvuehghgjuihghsebghsbghbnuehvbisbnhbvjurbhnvpbvhnr"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/textViewDescripcionPeliculaPopUp"
