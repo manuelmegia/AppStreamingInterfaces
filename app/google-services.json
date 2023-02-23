@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1012797607064",
+    "firebase_url": "https://appstreaminginterfaces-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "appstreaminginterfaces",
+    "storage_bucket": "appstreaminginterfaces.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1012797607064:android:f7e065729566769166d4ed",
+        "android_client_info": {
+          "package_name": "com.example.appstreaminginterfaces"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1012797607064-86o71jmq28nujh7u3ap7u7c2ll5rt1b3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1nF8a0md-dbgQlNL7zbqjQa5L6QrdEtM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1012797607064-86o71jmq28nujh7u3ap7u7c2ll5rt1b3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

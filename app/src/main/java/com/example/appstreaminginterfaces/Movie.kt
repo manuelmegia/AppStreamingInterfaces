@@ -1,12 +1,12 @@
 package com.example.appstreaminginterfaces
 
 data class Movie (
-    val id: Int,
-    val title: String,
-    val description: String,
-    val featuredImage: Int,
-    val featuredImageTumbada: Int,
-    val trailer: String
+    var id: Int? = null,
+    var title: String? = null,
+    var description: String? = null,
+    var featuredImage: Int? = null,
+    var featuredImageTumbada: Int? = null,
+    var trailer: String? = null
 ) {
     companion object {
         val data

@@ -33,7 +33,7 @@ class CustomAdapter(
     class ViewHolder(var movieBinding: MovieFillerBinding) :
         RecyclerView.ViewHolder(movieBinding.root) {
         fun bindMovie(movie: Movie) {
-            movieBinding.featuredImage.setImageResource(movie.featuredImage)
+            movieBinding.featuredImage.setImageResource(movie.featuredImage!!)
             movieBinding.movieTitle.text = movie.title
         }
     }

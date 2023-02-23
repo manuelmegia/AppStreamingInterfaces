@@ -17,7 +17,17 @@
             android:layout_height="240dp"
             android:layout_weight="5"
             app:autoPlay="false"
-            app:enableAutomaticInitialization="false"/>
+            app:enableAutomaticInitialization="false">
+
+            <ToggleButton
+                android:id="@+id/buttonFavorito"
+                android:layout_width="56dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:textOff="no"
+                android:textOn="si" />
+
+        </com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>
 
         <TextView
             android:id="@+id/textViewTituloPeliculaPopUp"
