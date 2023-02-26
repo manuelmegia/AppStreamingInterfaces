@@ -20,6 +20,7 @@ class Login : AppCompatActivity() {
         binding.buttonLogin.setOnClickListener {
             auth.signInWithEmailAndPassword(binding.editTextTextEmailAddress.text.toString(),binding.editTextTextPassword.text.toString()).addOnCompleteListener { task ->
                 if(task.isSuccessful){
+                    //se genera una lista de peliculas vistas y peliculas favoritas para cada usuario
                     pelisUser
                     val intent= Intent(this,MainActivity::class.java)
                     startActivity(intent)

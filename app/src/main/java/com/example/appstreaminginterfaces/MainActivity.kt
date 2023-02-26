@@ -41,12 +41,18 @@ class MainActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         setupRecyclerView()
         generarPeliAleatoria()
-        binding.imageButton2.background = ContextCompat.getDrawable(this, ultimaPeliSeleccionada.featuredImage!!)
+        binding.imageButton2.background =
+            ContextCompat.getDrawable(this, ultimaPeliSeleccionada.featuredImage!!)
 
-        binding.materialToolbar2.title = "NEFLI"
+        binding.materialToolbar2.title = "NETFLIX"
         binding.materialToolbar2.isTitleCentered = true
         setSupportActionBar(binding.materialToolbar2)
-        binding.materialToolbar2.setOnClickListener { binding.scrollViewInicio.smoothScrollTo(0, 0) }
+        binding.materialToolbar2.setOnClickListener {
+            binding.scrollViewInicio.smoothScrollTo(
+                0,
+                0
+            )
+        }
         binding.imageButton2.setOnClickListener {
             savePeliculas(ultimaPeliSeleccionada, pelisUser.peliculasVistas)
             val intent = Intent(this, Reproductor::class.java)
@@ -77,15 +83,25 @@ class MainActivity : AppCompatActivity() {
                 val products = it.result.getValue(EstructuraDB::class.java)
                 if (products != null) {
                     pelisUser.peliculasVistas = products.peliculasVistas!!
-                    internoRecyclerView(
-                        binding.recyclerViewPelisVistas,
-                        products.peliculasVistas ?: ArrayList<Movie>()
-                    )
+                    if (pelisUser.peliculasVistas.isEmpty())
+                        binding.layoutVistas.visibility = View.GONE
+                    else {
+                        binding.layoutVistas.visibility = View.VISIBLE
+                        internoRecyclerView(
+                            binding.recyclerViewPelisVistas,
+                            products.peliculasVistas ?: ArrayList<Movie>()
+                        )
+                    }
                     pelisUser.peliculasFavorite = products.peliculasFavorite!!
-                    internoRecyclerView(
-                        binding.recyclerViewPelisFavoritas,
-                        products.peliculasFavorite ?: ArrayList<Movie>()
-                    )
+                    if (pelisUser.peliculasFavorite.isEmpty())
+                        binding.layoutFavoritas.visibility = View.GONE
+                    else {
+                        binding.layoutFavoritas.visibility = View.VISIBLE
+                        internoRecyclerView(
+                            binding.recyclerViewPelisFavoritas,
+                            products.peliculasFavorite ?: ArrayList<Movie>()
+                        )
+                    }
                 }
                 Log.d(TAG, products.toString())
             } else {
