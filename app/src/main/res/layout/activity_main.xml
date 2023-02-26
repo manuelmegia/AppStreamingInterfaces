@@ -88,7 +88,7 @@
                     android:id="@+id/textView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Peliculas"
+                    android:text="Series"
                     android:textSize="34sp" />
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -104,7 +104,7 @@
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Series"
+                    android:text="Peliculas"
                     android:textSize="34sp" />
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -112,51 +112,49 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    tools:listitem="@layout/movie_filler" >
+                    tools:listitem="@layout/movie_filler">
 
                 </androidx.recyclerview.widget.RecyclerView>
 
-                <LinearLayout
-                    android:id="@+id/layoutVistas"
+                android:id="@+id/layoutVistas"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView5"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_height="wrap_content"
+                    android:text="Seguir Viendo"
+                    android:textSize="34sp" />
 
-                    <TextView
-                        android:id="@+id/textView5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Seguir Viendo"
-                        android:textSize="34sp" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recyclerViewPelisVistas"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        tools:listitem="@layout/movie_filler" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/layoutFavoritas"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewPelisVistas"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    tools:listitem="@layout/movie_filler" /><![CDATA[
 
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recyclerViewPelisFavoritas"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        tools:listitem="@layout/movie_filler" />
+                android:id="@+id/layoutFavoritas"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/textView6"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Peliculas favoritas"
-                        android:textSize="34sp" />
-                </LinearLayout>
+                ]]>
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Peliculas Favoritas"
+                    android:textSize="34sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewPelisFavoritas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    tools:listitem="@layout/movie_filler" />
 
             </LinearLayout>
         </LinearLayout>

@@ -83,25 +83,15 @@ class MainActivity : AppCompatActivity() {
                 val products = it.result.getValue(EstructuraDB::class.java)
                 if (products != null) {
                     pelisUser.peliculasVistas = products.peliculasVistas!!
-                    if (pelisUser.peliculasVistas.isEmpty())
-                        binding.layoutVistas.visibility = View.GONE
-                    else {
-                        binding.layoutVistas.visibility = View.VISIBLE
-                        internoRecyclerView(
-                            binding.recyclerViewPelisVistas,
-                            products.peliculasVistas ?: ArrayList<Movie>()
-                        )
-                    }
+                    internoRecyclerView(
+                        binding.recyclerViewPelisVistas,
+                        products.peliculasVistas ?: ArrayList<Movie>()
+                    )
                     pelisUser.peliculasFavorite = products.peliculasFavorite!!
-                    if (pelisUser.peliculasFavorite.isEmpty())
-                        binding.layoutFavoritas.visibility = View.GONE
-                    else {
-                        binding.layoutFavoritas.visibility = View.VISIBLE
-                        internoRecyclerView(
-                            binding.recyclerViewPelisFavoritas,
-                            products.peliculasFavorite ?: ArrayList<Movie>()
-                        )
-                    }
+                    internoRecyclerView(
+                        binding.recyclerViewPelisFavoritas,
+                        products.peliculasFavorite ?: ArrayList<Movie>()
+                    )
                 }
                 Log.d(TAG, products.toString())
             } else {
@@ -147,6 +137,7 @@ class MainActivity : AppCompatActivity() {
 
         popupView.findViewById<TextView>(R.id.textViewDescripcionPeliculaPopUp).setOnClickListener {
             val intent = Intent(this, Reproductor::class.java)
+            intent.putExtra("trailer", movie.trailer)
             startActivity(intent)
         }
 
