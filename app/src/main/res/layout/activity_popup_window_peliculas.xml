@@ -24,8 +24,7 @@
                 android:layout_width="56dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
-                android:textOff="no"
-                android:textOn="si" />
+                android:textOn="like" />
 
         </com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>
 

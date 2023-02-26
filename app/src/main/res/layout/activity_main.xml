@@ -39,18 +39,18 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="500dp"
                 android:layout_weight="1">
 
                 <ImageButton
                     android:id="@+id/imageButton2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/bbad_vertical__1_"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_launcher_background" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
                     android:id="@+id/buttonVerahoraPeliPrincipal"
@@ -60,10 +60,10 @@
                     android:text="Ver Ahora"
                     app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.588"
+                    app:layout_constraintHorizontal_bias="0.578"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.55" />
+                    app:layout_constraintVertical_bias="0.85" />
 
                 <Button
                     android:id="@+id/buttonMasInformacionPeliPrincipal"
@@ -72,10 +72,10 @@
                     android:text="Mas Informacion"
                     app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
                     app:layout_constraintEnd_toStartOf="@+id/buttonVerahoraPeliPrincipal"
-                    app:layout_constraintHorizontal_bias="0.41"
+                    app:layout_constraintHorizontal_bias="0.551"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.898" />
+                    app:layout_constraintVertical_bias="0.94" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout

@@ -2,6 +2,7 @@ package com.example.appstreaminginterfaces
 
 import android.content.ContentValues.TAG
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
@@ -13,6 +14,7 @@ import android.widget.TextView
 import android.widget.Toast
 import android.widget.ToggleButton
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appstreaminginterfaces.databinding.ActivityMainBinding
@@ -39,14 +41,12 @@ class MainActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         setupRecyclerView()
         generarPeliAleatoria()
-        binding.imageButton2.setImageResource(ultimaPeliSeleccionada.featuredImageTumbada!!)
+        binding.imageButton2.background = ContextCompat.getDrawable(this, ultimaPeliSeleccionada.featuredImage!!)
 
-        binding.materialToolbar2.title = "NETFLIX"
+        binding.materialToolbar2.title = "NEFLI"
         binding.materialToolbar2.isTitleCentered = true
         setSupportActionBar(binding.materialToolbar2)
-        binding.materialToolbar2.setOnClickListener {
-            binding.scrollViewInicio.smoothScrollTo(0, 0)
-        }
+        binding.materialToolbar2.setOnClickListener { binding.scrollViewInicio.smoothScrollTo(0, 0) }
         binding.imageButton2.setOnClickListener {
             savePeliculas(ultimaPeliSeleccionada, pelisUser.peliculasVistas)
             val intent = Intent(this, Reproductor::class.java)
@@ -126,9 +126,11 @@ class MainActivity : AppCompatActivity() {
         val focus = true
         val popupWindow = PopupWindow(popupView, wid, high, focus)
 
+        if (pelisUser.peliculasFavorite.contains(movie))
+            popupView.findViewById<ToggleButton>(R.id.buttonFavorito).isChecked = true
+
         popupView.findViewById<TextView>(R.id.textViewDescripcionPeliculaPopUp).setOnClickListener {
             val intent = Intent(this, Reproductor::class.java)
-            intent.putExtra("trailer", movie.trailer)
             startActivity(intent)
         }
 
