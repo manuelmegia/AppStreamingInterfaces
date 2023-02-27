@@ -41,7 +41,7 @@ val seriesAccion
             6,
             "LA CIUDAD PERDIDA",
             "La carrera literaria de la brillante, a la vez que huraña, escritora de novelas Loretta Sage (Sandra Bullock) ha girado en torno a las populares novelas románticas de aventuras que, ambientadas en lugares exóticos, protagoniza un atractivo galán cuya imagen aparece reproducida en todas las portadas, y que en la vida real corresponde a Alan (Channing Tatum), un modelo que ha centrado su carrera en personificar al novelesco aventurero.",
-            R.drawable.ic_launcher_foreground,
+            R.drawable.la_ciudad_perdida,
             "sTid-p-C40A"
         ),
         Movie(
