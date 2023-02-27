@@ -43,10 +43,10 @@ class MainActivity : AppCompatActivity() {
         generarPeliAleatoria()
         binding.imageButton2.background =
             ContextCompat.getDrawable(this, ultimaPeliSeleccionada.featuredImage!!)
-
         binding.materialToolbar2.title = "NETFLIX"
         binding.materialToolbar2.isTitleCentered = true
         setSupportActionBar(binding.materialToolbar2)
+
         binding.materialToolbar2.setOnClickListener {
             binding.scrollViewInicio.smoothScrollTo(
                 0,
@@ -59,6 +59,12 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("trailer", ultimaPeliSeleccionada.trailer)
             startActivity(intent)
         }
+        binding.buttonVerahoraPeliPrincipal.setOnClickListener {
+            savePeliculas(ultimaPeliSeleccionada, pelisUser.peliculasVistas)
+            val intent = Intent(this, Reproductor::class.java)
+            intent.putExtra("trailer", ultimaPeliSeleccionada.trailer)
+            startActivity(intent)
+        }
         binding.imageButton2.setOnLongClickListener {
             popupWindowShow(it, ultimaPeliSeleccionada)
             true
@@ -66,12 +72,6 @@ class MainActivity : AppCompatActivity() {
         binding.buttonMasInformacionPeliPrincipal.setOnClickListener {
             popupWindowShow(it, ultimaPeliSeleccionada)
         }
-        binding.buttonVerahoraPeliPrincipal.setOnClickListener {
-            val intent = Intent(this, Reproductor::class.java)
-            intent.putExtra("trailer", ultimaPeliSeleccionada.trailer)
-            startActivity(intent)
-        }
-
     }
 
     private fun setupRecyclerView() {
@@ -105,6 +105,7 @@ class MainActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             adapter = CustomAdapter(data) { movie, position, isLongClick ->
                 if (isLongClick) {
+                    //abre una ventana emergente con informacion sobre la pelicula
                     popupWindowShow(refRecView, movie)
                 } else {
                     Toast.makeText(
@@ -112,8 +113,9 @@ class MainActivity : AppCompatActivity() {
                         "Clicked on movie: ${movie.title}",
                         Toast.LENGTH_SHORT
                     ).show()
-
+                    //guarda la película en la base de datos
                     savePeliculas(movie, pelisUser.peliculasVistas)
+                    //navega hacia la acticity reproductor
                     val intent = Intent(this@MainActivity, Reproductor::class.java)
                     intent.putExtra("trailer", movie.trailer)
                     startActivity(intent)
@@ -126,7 +128,6 @@ class MainActivity : AppCompatActivity() {
         val inflater = getSystemService(LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val popupView = inflater.inflate(R.layout.activity_popup_window_peliculas, null)
 
-        // step 2
         val wid = LinearLayout.LayoutParams.WRAP_CONTENT
         val high = LinearLayout.LayoutParams.WRAP_CONTENT
         val focus = true
@@ -134,12 +135,6 @@ class MainActivity : AppCompatActivity() {
 
         if (pelisUser.peliculasFavorite.contains(movie))
             popupView.findViewById<ToggleButton>(R.id.buttonFavorito).isChecked = true
-
-        popupView.findViewById<TextView>(R.id.textViewDescripcionPeliculaPopUp).setOnClickListener {
-            val intent = Intent(this, Reproductor::class.java)
-            intent.putExtra("trailer", movie.trailer)
-            startActivity(intent)
-        }
 
         popupView.findViewById<ToggleButton>(R.id.buttonFavorito)
             .setOnCheckedChangeListener { buttonView, isChecked ->
@@ -150,6 +145,12 @@ class MainActivity : AppCompatActivity() {
                         pelisUser.peliculasFavorite.remove(movie)
                 }
             }
+
+        popupView.findViewById<TextView>(R.id.textViewDescripcionPeliculaPopUp).setOnClickListener {
+            val intent = Intent(this, Reproductor::class.java)
+            intent.putExtra("trailer", movie.trailer)
+            startActivity(intent)
+        }
 
         var youtubePlayerView = popupView.findViewById<YouTubePlayerView>(R.id.youtube_player_view)
         lifecycle.addObserver(youtubePlayerView)
